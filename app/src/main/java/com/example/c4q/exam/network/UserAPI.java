@@ -1,7 +1,7 @@
 package com.example.c4q.exam.network;
 
+import com.example.c4q.exam.model.ListOfUsers;
 import com.example.c4q.exam.model.Results;
-import com.example.c4q.exam.model.User;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -12,5 +12,5 @@ import retrofit2.http.GET;
 
 public interface UserAPI {
     @GET("?nat=us&inc=name,location,cell,email,dob,picture&results=20")
-    Call<Results> getUserResults();
+    Call<ListOfUsers> getUserResults();
 }
