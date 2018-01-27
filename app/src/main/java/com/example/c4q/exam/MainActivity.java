@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recycler_view);
-        modelAdapter = new ModelAdapter(this);
+        modelAdapter = new ModelAdapter(getApplicationContext());
         recyclerView.setAdapter(modelAdapter);
         recyclerView.setHasFixedSize(true);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);

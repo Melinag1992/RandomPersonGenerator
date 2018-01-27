@@ -1,10 +1,12 @@
 package com.example.c4q.exam.model;
 
+import java.io.Serializable;
+
 /**
  * Created by c4q on 1/24/18.
  */
 
-public class Name {
+public class Name implements Serializable{
     public String getName() {
         return name;
     }

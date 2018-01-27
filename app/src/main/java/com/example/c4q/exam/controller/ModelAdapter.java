@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.c4q.exam.MainActivity;
 import com.example.c4q.exam.R;
 import com.example.c4q.exam.model.Results;
 import com.squareup.picasso.Picasso;
@@ -54,12 +55,12 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ModelViewHol
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, PersonalDetail.class);
+                Intent intent=  new Intent(context, PersonalDetail.class);
 
 
-                results = resultsList.get(position);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("result", results);
+                Results result= resultsList.get(position);
+                Bundle bundle= new Bundle();
+                bundle.putSerializable("results", result);
                 intent.putExtras(bundle);
                 context.startActivity(intent);
             }

@@ -30,21 +30,27 @@ public class PersonalDetail extends AppCompatActivity {
 
         setViews();
 
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-
         Bundle outerObject = getIntent().getExtras();
         Results result = null;
 
+        if (outerObject != null) {
+            result = (Results) outerObject.getSerializable("results");
 
+            Picasso.with(getApplicationContext()).load(result.getPicture().getLarge())
+                    .into(personImage);
+            fullName.setText(result.getName().getTitle()+". "+result.getName().getFirst()+" "+result.getName().getLast());
+            email.setText(result.getEmail());
+            phoneNumber.setText(result.getCell());
+            addressLine1.setText(result.getLocation().getStreet());
+            addressLine2.setText(result.getLocation().getState()+", "+result.getLocation().getCity()+" "+result.getLocation().getPostcode());
+            dob.setText(result.getDob());
+        }
 
     }
 
     public void setViews() {
 
-        personImage = findViewById(R.id.image_view);
+        personImage = findViewById(R.id.image);
         fullName = findViewById(R.id.name);
         email = findViewById(R.id.email);
         phoneNumber = findViewById(R.id.phone_number);
