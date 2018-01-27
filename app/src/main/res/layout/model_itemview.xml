@@ -21,6 +21,7 @@
       <TextView
           android:id="@+id/firstname"
           android:textAllCaps="true"
+          android:textStyle="bold"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content" />
       <TextView

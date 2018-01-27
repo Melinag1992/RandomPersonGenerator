@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         modelAdapter.notifyDataSetChanged();
+        setRetrofit();
         return super.onOptionsItemSelected(item);
     }
 
